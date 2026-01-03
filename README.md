@@ -2,7 +2,7 @@
 Employee record management system (ERMS) built with Python-Flask and MySQL is a web-based application designed to efficiently manage and track employee data within an organization.
 
 
-1. ### Setup db:
+1. ## Setup db:
 ```bash
 #!/bin/bash
 
@@ -15,7 +15,7 @@ CREATE USER IF NOT EXISTS 'admin'@'%' IDENTIFIED BY '@1111';
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
 
-CREATE DATABASE IF NOT EXISTS srlemployee;
+CREATE DATABASE IF NOT EXISTS employee;
 USE srlemployee;
 
 CREATE TABLE IF NOT EXISTS employeetb (
@@ -27,9 +27,18 @@ CREATE TABLE IF NOT EXISTS employeetb (
 );
 EOF
 ```
+### Varify
+sudo mysql -u root
+show databases;
+use employee;
+show tables;
+DESCRIBE employeetb;
+SELECT * FROM employeetb LIMIT 10;
 
-2. ### Setup App:
-3. 
+---
+
+2. ## Setup App:
+### option: a
 ```bash
 #!/bin/bash
 set -e
@@ -55,5 +64,48 @@ fi
 
 #edit port 5000, 
 #edit config.py (add s3 and rds url)
-sudo python3 Empapp.py
+sudo python3 EmpApp.py
 ```
+
+---
+
+### option:b
+
+```bash
+#!/bin/bash
+
+SERVICE_FILE="/etc/systemd/system/empapp.service"
+
+echo "Creating systemd service..."
+
+sudo tee $SERVICE_FILE > /dev/null <<EOF
+[Unit]
+Description=Employee Flask Application
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ERMS-SRL
+ExecStart=/usr/bin/python3 /home/ubuntu/ERMS-SRL/EmpApp.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/empapp.log
+StandardError=append:/var/log/empapp.log
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sleep 5
+sudo systemctl enable empapp
+sudo systemctl start empapp
+
+sudo systemctl status empapp --no-pager
+```
+
+
+
+
+
+
