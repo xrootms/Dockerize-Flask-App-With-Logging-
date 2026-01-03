@@ -3,6 +3,8 @@ Employee record management system (ERMS) built with Python-Flask and MySQL is a 
 
 
 ## 1. Setup db:
+$ nano setup_db.sh
+
 ```bash
 #!/bin/bash
 
@@ -40,7 +42,7 @@ SELECT * FROM employeetb LIMIT 10;
 ---
 
 ## 2. Setup App:
-### option: a
+$ nano setup_app.sh
 
 ```bash
 #!/bin/bash
@@ -77,6 +79,7 @@ sudo python3 EmpApp.py
 ```
 
 ### Option:b (with logs)
+$ nano setup_empapp_service.sh
 
 ```bash
 #!/bin/bash
