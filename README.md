@@ -142,18 +142,18 @@ image<img src="./image/18499070.gif" alt="LEMP Diagram" width="200" align="right
 You can see the size of the Docker image has been reduced from 106MB to 19.8MB and it works properly without any issue.
 
 ---
- ## Docker Log Management
+ # Docker Log Management
 
- **What is the CloudWatch Agent?**
+### What is the CloudWatch Agent?
 The CloudWatch Agent is an official AWS service/daemon that runs on your server and can:
 
-•	collect log files.
-•	collect system metrics (CPU, RAM, disk, network).
-•	send them securely to CloudWatch.
+-	collect log files.
+-	collect system metrics (CPU, RAM, disk, network).
+-	send them securely to CloudWatch.
 
 In Docker environments, it is often used to:
-•	Read container log files from: /var/lib/docker/containers/*/*-json.log
-•	 Forward them to CloudWatch Logs
+-	Read container log files from: /var/lib/docker/containers/*/*-json.log
+-	Forward them to CloudWatch Logs
 
 ### Step 1: Create IAM role
 Attach this policy to EC2: 
