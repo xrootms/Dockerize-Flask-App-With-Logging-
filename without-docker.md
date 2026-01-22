@@ -1,4 +1,4 @@
-## Step 1.* Database Setup :
+## Step 1. Database Setup :
 $ nano setup_db.sh
 
 ```bash
