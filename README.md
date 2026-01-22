@@ -215,10 +215,10 @@ image<img src="./image/18499070.gif" alt="LEMP Diagram" width="200" align="right
 
 
 **Result**
-Now automatically:
-all Docker container logs appear in CloudWatch Logs
-Log group: emp-srl-app
-Log streams: EC2 instance IDs
+- Now automatically:
+- all Docker container logs appear in CloudWatch Logs
+- Log group: emp-srl-app
+- Log streams: EC2 instance IDs
 
 
 
