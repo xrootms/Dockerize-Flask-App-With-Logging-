@@ -95,7 +95,7 @@ docker run -d -p 5000:5000  -- name <container-name>  <image-name> .
 ```
 Now, check your application on the browser using <ip:5000>
 
-<img src="./image/18499070.gif" alt="LEMP Diagram" width="200" align="right" />
+<img src="./doc/image/brows.png" width="200" align="right" />
 
 ---
 # Optimizing Docker Images
