@@ -113,9 +113,9 @@ exec bash
 slim –version
 ```
 
-Create a File preserved-paths.txt  with the file name or file path you don’t want to get removed during the slim process.
+- Create a File **preserved-paths.txt** with the file name or file path you don’t want to get removed during the slim process.
 
-#nano preserved-paths.txt 
+nano preserved-paths.txt 
 
 ```bash
  /app
