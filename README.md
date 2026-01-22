@@ -1,7 +1,7 @@
-<img width="1140" height="30" alt="image" src="https://github.com/user-attachments/assets/23535deb-c6b0-4afe-924d-0c24a67613e9" />Employee record management system (ERMS) built with Python-Flask and MySQL is a web-based application designed to efficiently manage and track employee data within an organization.
+Employee record management system (ERMS) built with Python-Flask and MySQL is a web-based application designed to efficiently manage and track employee data within an organization.
 ---
 
-## Task 1. Database Setup :
+## *Task 1.* Database Setup :
 $ nano setup_db.sh
 
 ```bash
@@ -39,7 +39,7 @@ DESCRIBE employee;
 SELECT * FROM employee LIMIT 10;
 ```
 ---
-## Task 2. Dockerize App Setup:
+## *Task 2.* Dockerize App Setup:
 ### Step 1: Clone/Fork the repository to make use of it.
 
 ```bash
@@ -83,12 +83,12 @@ cryptograph
 |15.	 USER appuser                            | # Run application as a non-root user called appuser.”
 
 
-**Build Docker Image**
+### Build Docker Image
 
 ```bash
 docker build -t <image-name> .
 ```
-**Run the Docker Image**
+### Run the Docker Image
 ```bash
 docker run -d -p 5000:5000  -- name <container-name>  <image-name> .
 ```
@@ -97,7 +97,7 @@ Now, check your application on the browser using <ip:5000>
 <img src="./image/18499070.gif" alt="LEMP Diagram" width="200" align="right" />
 
 ---
-## Optimizing Docker Images
+# Optimizing Docker Images
 Optimizing Docker images is very important. We can use **SlimToolkit** to reduce the size of your  Docker image.
 **Install SlimToolkit :**
   
